@@ -1,0 +1,1 @@
+import { HeadingTitle } from "./HeadingTitle";
