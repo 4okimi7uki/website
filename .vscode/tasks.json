@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "[WEB] Run app",
+            "detail": "pnpm next dev -H 0.0.0.0 -p 3002",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PORT": "3002"
+                }
+            },
+            "command": "bash -lc '(pnpm next dev -H 0.0.0.0 -p $PORT & pid=$!; while ! nc -z 127.0.0.1 $PORT; do sleep 0.2; done; open http://localhost:$PORT; wait $pid)'",
+            "problemMatcher": []
+        }
+    ]
+}
