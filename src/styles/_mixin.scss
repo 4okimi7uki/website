@@ -1,0 +1,22 @@
+/* Breakpoints */
+$sm: 599px;
+$md: 789px;
+$lg: 1024px;
+$xl: 1200px;
+
+@mixin sp {
+    @media (max-width: $sm) {
+        @content;
+    }
+
+    @media (min-width: ($sm + 1px)) and (max-width: $lg) and (min-aspect-ratio: 16/9) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: ($sm + 1px)) and (((max-width: $lg) and (max-aspect-ratio: 16/9)) 
+    or (min-width: ($lg + 1px))) {
+        @content;
+    }
+}
