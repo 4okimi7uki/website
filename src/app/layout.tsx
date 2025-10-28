@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Zen_Maru_Gothic, Yusei_Magic } from "next/font/google";
-import "@/styles/_variables.scss";
-import "./globals.css";
+import "@/styles/global.scss";
 import { Header } from "@/components/layouts/Header";
 import { Footer } from "@/components/layouts/Footer";
 
