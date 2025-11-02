@@ -62,28 +62,42 @@ const BIO = [
 export function About() {
     return (
         <Section>
-            <HeadingTitle title="About" type="h1" />
-            <HeadingTitle title="History" type="h2" />
-            <ul className={styles.historyList}>
-                {BIO.sort((a, b) => dayjs(b.startDate).diff(a.startDate)).map((item) => {
-                    return (
-                        <li key={item.title} className={styles.bioListItem}>
-                            <div className={styles.iconArea}>
-                                <div className={styles.bar}></div>
-                                <div>{item.icon}</div>
-                                <div className={styles.bar} />
-                            </div>
-                            <div className={styles.contentArea}>
-                                <time dateTime={item.startDate} className={styles.interval}>
-                                    {item.startDate} {item.endDate && ` - ${item.endDate}`}
-                                </time>
-                                <h3 className={styles.orgTitle}>{item.title}</h3>
-                                <p>{item.role && <div> - {item.role}</div>}</p>
-                            </div>
-                        </li>
-                    );
-                })}
-            </ul>
+            <HeadingTitle title="About" type="h1" align="center" />
+            <div className={styles.wrapper}>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus numquam soluta, quas dignissimos eius
+                    quia deserunt suscipit quaerat praesentium impedit optio enim iste rerum, dolorem ex perferendis hic
+                    ipsum et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus numquam soluta, quas
+                    dignissimos eius quia deserunt suscipit quaerat praesentium impedit optio enim iste rerum, dolorem
+                    ex perferendis hic ipsum et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus numquam
+                    soluta, quas dignissimos eius quia deserunt suscipit quaerat praesentium impedit optio enim iste
+                    rerum, dolorem ex perferendis hic ipsum et.
+                </p>
+            </div>
+
+            <HeadingTitle title="History" type="h2" align="center" />
+            <div className={styles.historyListWrapper}>
+                <ul className={styles.historyList}>
+                    {BIO.sort((a, b) => dayjs(b.startDate).diff(a.startDate)).map((item) => {
+                        return (
+                            <li key={item.title} className={styles.bioListItem}>
+                                <div className={styles.iconArea}>
+                                    <div className={styles.bar} />
+                                    <div>{item.icon}</div>
+                                    <div className={styles.bar} />
+                                </div>
+                                <div className={styles.contentArea}>
+                                    <time dateTime={item.startDate} className={styles.interval}>
+                                        {item.startDate} {item.endDate && ` - ${item.endDate}`}
+                                    </time>
+                                    <h3 className={styles.orgTitle}>{item.title}</h3>
+                                    <p>{item.role && <div> - {item.role}</div>}</p>
+                                </div>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </Section>
     );
 }

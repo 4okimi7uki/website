@@ -1,6 +1,17 @@
 @use "@/styles/mixin" as *;
 @use "@/styles/variables" as *;
 
+.wrapper {
+    margin: 0 50px 50px;
+    @include sp {
+        margin: 0 12px 50px;
+    }
+}
+
+.historyListWrapper {
+    margin-inline: auto;
+}
+
 ul.historyList {
     margin: 10px 0;
 }
