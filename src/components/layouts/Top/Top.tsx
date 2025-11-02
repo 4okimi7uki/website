@@ -1,7 +1,7 @@
 import { Section } from "../Section";
 import styles from "./index.module.scss";
 import Image from "next/image";
-import me from "../../../../public/Mizuki_PC.gif";
+import me from "../../../../public/Mizuki_chop.gif";
 
 export function Top() {
     return (
