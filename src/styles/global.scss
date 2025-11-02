@@ -1,6 +1,6 @@
-@import "./rest.scss";
-@import "./mixin";
-@import "./variables";
+@use "./rest.scss";
+@use "./_variables.scss";
+@use "./_mixin.scss";
 
 :root {
     --background: #ffffff;
