@@ -1,8 +1,17 @@
 .headTitle {
     font-family: var(--font-yusei-magic);
+    margin-bottom: 20px;
 }
 
 .h1 {
-    margin-bottom: 16px;
+}
+
+.align-center {
     text-align: center;
+}
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
 }
