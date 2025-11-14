@@ -74,7 +74,7 @@ const getLastReleaseDate = () => {
     const prs = JSON.parse(lastReleaseJson);
 
     if (!prs || prs.length === 0) {
-        console.error("まだ develop → main のマージがありません ><");
+        console.error("No PRs have been merged into 'main' yet. Aborting release process.");
         process.exit(0);
     }
 
@@ -85,7 +85,9 @@ const getLastReleaseDate = () => {
 };
 
 const main = () => {
-    console.log(`Generating release PR...\n`);
+    console.log("============================================");
+    console.log(`Generating Release PR...`);
+    console.log("============================================");
 
     const from = getLastReleaseDate(); //  最後にマージした日付を取得
     const now = new Date();
@@ -105,7 +107,7 @@ const main = () => {
     const mergedPrJson = JSON.parse(mergedPrJsonRaw);
 
     if (mergedPrJson.length === 0) {
-        console.log("対象期間に develop にマージされた PR はありませんでした。");
+        console.log("No PRs merged into develop during the target period. Aborting release process.");
         process.exit(0);
     }
 
@@ -115,8 +117,9 @@ const main = () => {
 
     fs.writeFileSync("release_body.md", md, "utf-8");
 
-    console.log("## Generated Markdown...\n");
+    console.log("::group::Generated Markdown");
     console.log(md);
+    console.log("::endgroup::");
 
     // Release branch作成 ---
     const releaseBranch = createBranch("develop", `release/${formatDate(now)}`);
@@ -126,7 +129,10 @@ const main = () => {
         `pr create --title 'Release/${formatDate(now)}' --base main --head ${releaseBranch} --body-file release_body.md`
     );
 
-    console.log("## success Release PR creation!! \n");
+    console.log("============================================");
+    console.log("🎉 SUCCESS: Release PR created successfully!");
+    console.log(`👉 PR Branch: ${releaseBranch}`);
+    console.log("============================================");
 };
 
 main();
