@@ -85,7 +85,7 @@ const getLastReleaseDate = () => {
 };
 
 const main = () => {
-    console.log(`Generating release PR ...`);
+    console.log(`Generating release PR...\n`);
 
     const from = getLastReleaseDate(); //  最後にマージした日付を取得
     const now = new Date();
@@ -115,7 +115,7 @@ const main = () => {
 
     fs.writeFileSync("release_body.md", md, "utf-8");
 
-    console.log("--- Generated Markdown ---\n");
+    console.log("## Generated Markdown...\n");
     console.log(md);
 
     // Release branch作成 ---
@@ -126,7 +126,7 @@ const main = () => {
         `pr create --title 'Release/${formatDate(now)}' --base main --head ${releaseBranch} --body-file release_body.md`
     );
 
-    console.log("success Release PR creation!! \n");
+    console.log("## success Release PR creation!! \n");
 };
 
 main();
