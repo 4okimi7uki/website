@@ -1,6 +1,6 @@
 import { execSync } from "node:child_process";
 import fs from "node:fs";
-import { buildMarkdown, formatDate, groupByAuthor } from "./releaseHelpers.js";
+import { buildMarkdown, formatDate, groupByAuthor } from "./releaseHelpers.mjs";
 
 const token = process.env.GITHUB_TOKEN;
 
@@ -70,15 +70,16 @@ const createBranch = (baseBranch, creationBranch) => {
 };
 
 const getLastReleaseDate = () => {
-    const lastReleaseJson = gh(
-        "pr list --state merged --base main --sort merged --order desc --limit 1 --json number,mergedAt"
-    );
-    const [lastRelease] = JSON.parse(lastReleaseJson);
+    const lastReleaseJson = gh("pr list --state merged --base main --limit 100 --json number,mergedAt");
+    const prs = JSON.parse(lastReleaseJson);
 
-    if (!lastRelease) {
+    if (!prs || prs.length === 0) {
         console.error("まだ develop → main のマージがありません ><");
         process.exit(0);
     }
+
+    prs.sort((a, b) => new Date(b.mergedAt) - new Date(a.mergedAt));
+    const [lastRelease] = prs;
 
     return lastRelease.mergedAt;
 };
