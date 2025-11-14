@@ -1,6 +1,6 @@
-import { execSync } from "node:child_process";
-import fs from "node:fs";
-import { buildMarkdown, formatDate, groupByAuthor } from "./releaseHelpers.mjs";
+const { execSync } = require("node:child_process");
+const fs = require("node:fs");
+const { buildMarkdown, formatDate, groupByAuthor } = require("./releaseHelpers");
 
 const token = process.env.GITHUB_TOKEN;
 

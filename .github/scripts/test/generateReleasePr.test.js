@@ -1,5 +1,5 @@
-import { buildMarkdown, groupByAuthor } from "../releaseHelpers.mjs";
-import data from "./testdata.json" assert { type: "json" };
+const { buildMarkdown, groupByAuthor } = require("../releaseHelpers");
+const data = require("./testdata.json");
 
 describe("groupByAuthor", () => {
     it("groups PRs by author", () => {
