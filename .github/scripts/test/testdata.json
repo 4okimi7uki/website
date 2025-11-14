@@ -1,0 +1,72 @@
+[
+  {
+    "author": {
+      "id": "U_kgDOChH9Ng",
+      "is_bot": false,
+      "login": "4okimi7uki",
+      "name": "Aoki Mizuki"
+    },
+    "number": 1268,
+    "title": "Main to Dev"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjU3ODI2MTcw",
+      "is_bot": false,
+      "login": "haruka919",
+      "name": "FuruHaru"
+    },
+    "number": 1262,
+    "title": "【ALBA_OPERATION-1721】 Spacer修正"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjU3ODI2MTcw",
+      "is_bot": false,
+      "login": "haruka919",
+      "name": "FuruHaru"
+    },
+    "number": 1247,
+    "title": "【ALBA_OPERATION-1675】共通コンポーネントのStorybook化（TagButton・TitleLabel・Spacer）"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjU3ODI2MTcw",
+      "is_bot": false,
+      "login": "haruka919",
+      "name": "FuruHaru"
+    },
+    "number": 1243,
+    "title": "【ALBA_OPERATION-1670】 共通コンポーネント（KeywordItemなど）のStorybook化"
+  },
+  {
+    "author": {
+      "id": "U_kgDOChH9Ng",
+      "is_bot": false,
+      "login": "4okimi7uki",
+      "name": "Aoki Mizuki"
+    },
+    "number": 1239,
+    "title": "【ALBA_OPERATION-1626】【大会メニュー・概要見出し】概要・コース⇨概要などにテキスト変更"
+  },
+  {
+    "author": {
+      "id": "U_kgDOChH9Ng",
+      "is_bot": false,
+      "login": "4okimi7uki",
+      "name": "Aoki Mizuki"
+    },
+    "number": 1236,
+    "title": "【ALBA_OPERATION-1629】【大会LB・獲得賞金】開催地時刻の⏰アイコン削除依頼"
+  },
+  {
+    "author": {
+      "id": "MDQ6VXNlcjU3ODI2MTcw",
+      "is_bot": false,
+      "login": "haruka919",
+      "name": "FuruHaru"
+    },
+    "number": 1235,
+    "title": "【ALBA_OPERATION-1634】 ツアー下部不要パーツの削除"
+  }
+]
