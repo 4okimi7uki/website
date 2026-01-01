@@ -1,23 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: "Noto Sans JP", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Noto Sans JP', system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 a,
 a:hover,
 a:visited {
-    color: inherit;
+  color: inherit;
 }
 // h1 {
 //     font-size: 2.986rem;
@@ -44,13 +44,13 @@ a:visited {
 //     font-size: 0.833rem;
 // }
 body {
-    font-size: 1.6rem;
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-zen-maru-gothic), var(--font-yusei-magic), Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-zen-maru-gothic), var(--font-yusei-magic), Arial, Helvetica, sans-serif;
 
-    display: flex;
-    flex-direction: column;
-    height: 100svh;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  position: relative;
 }

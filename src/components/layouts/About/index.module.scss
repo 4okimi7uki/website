@@ -1,70 +1,70 @@
-@use "@/styles/mixin" as *;
-@use "@/styles/variables" as *;
+@use '@/styles/mixin' as *;
+@use '@/styles/variables' as *;
 
 .wrapper {
-    margin: 0 50px 50px;
-    @include sp {
-        margin: 0 12px 50px;
-    }
+  margin: 0 50px 50px;
+  @include sp {
+    margin: 0 12px 50px;
+  }
 }
 
 .historyListWrapper {
-    margin-inline: auto;
+  margin-inline: auto;
 }
 
 ul.historyList {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 li.bioListItem {
+  display: flex;
+  gap: 10px;
+
+  .iconArea {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
-    .iconArea {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+    .bar {
+      height: 25px;
+      border-right: solid 1px var(--gray-50);
+    }
+    .icon {
+      color: var(--foreground);
+      @include text('20-140');
+      margin-top: 5px;
+    }
+  }
+  &:nth-last-child(1) .bar:nth-last-child(1) {
+    display: none;
+  }
+  &:nth-child(1) .bar:nth-child(1) {
+    border-right: dashed 1px var(--gray-50);
+  }
 
-        .bar {
-            height: 25px;
-            border-right: solid 1px var(--gray-50);
-        }
-        .icon {
-            color: var(--foreground);
-            @include text("20-140");
-            margin-top: 5px;
-        }
-    }
-    &:nth-last-child(1) .bar:nth-last-child(1) {
-        display: none;
-    }
-    &:nth-child(1) .bar:nth-child(1) {
-        border-right: dashed 1px var(--gray-50);
-    }
+  .contentArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s;
+    cursor: auto;
 
-    .contentArea {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 5px 0;
-        border-bottom: 1px solid transparent;
-        transition: all 0.4s;
-        cursor: auto;
-
-        .interval {
-            color: var(--gray-100);
-            @include text("14-140");
-        }
-        .orgTitle {
-            @include text("18-100");
-        }
-        p {
-            @include text("12-140");
-        }
+    .interval {
+      color: var(--gray-100);
+      @include text('14-140');
     }
-
-    &:hover > .contentArea {
-        border-bottom: 1px solid var(--gray-100);
+    .orgTitle {
+      @include text('18-100');
     }
+    p {
+      @include text('12-140');
+    }
+  }
+
+  &:hover > .contentArea {
+    border-bottom: 1px solid var(--gray-100);
+  }
 }
