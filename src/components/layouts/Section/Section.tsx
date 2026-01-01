@@ -1,9 +1,9 @@
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
 type Props = {
-    children: React.ReactNode;
+  children: React.ReactNode;
 };
 
 export function Section({ children }: Props) {
-    return <section className={styles.section}>{children}</section>;
+  return <section className={styles.section}>{children}</section>;
 }

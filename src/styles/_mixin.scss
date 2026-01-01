@@ -5,40 +5,40 @@ $lg: 1024px;
 $xl: 1200px;
 
 @mixin sp {
-    @media (max-width: $sm) {
-        @content;
-    }
+  @media (max-width: $sm) {
+    @content;
+  }
 
-    @media (min-width: ($sm + 1px)) and (max-width: $lg) and (min-aspect-ratio: 16/9) {
-        @content;
-    }
+  @media (min-width: ($sm + 1px)) and (max-width: $lg) and (min-aspect-ratio: 16/9) {
+    @content;
+  }
 }
 
 @mixin pc {
-    @media (min-width: ($sm + 1px)) and (((max-width: $lg) and (max-aspect-ratio: 16/9)) 
+  @media (min-width: ($sm + 1px)) and (((max-width: $lg) and (max-aspect-ratio: 16/9)) 
     or (min-width: ($lg + 1px))) {
-        @content;
-    }
+    @content;
+  }
 }
 
 @mixin text($token) {
-    $first-index: str-index($token, "-");
+  $first-index: str-index($token, '-');
 
-    $after-first: str-slice($token, $first-index + 1);
-    $second-index-relative: str-index($after-first, "-");
-    $second-index: if($second-index-relative, $first-index + $second-index-relative, null);
+  $after-first: str-slice($token, $first-index + 1);
+  $second-index-relative: str-index($after-first, '-');
+  $second-index: if($second-index-relative, $first-index + $second-index-relative, null);
 
-    $font-size: str-slice($token, 1, $first-index - 1);
-    $line-height: if(
-        $second-index,
-        str-slice($token, $first-index + 1, $second-index - 1),
-        str-slice($token, $first-index + 1)
-    );
-    $font-weight: if($second-index, str-slice($token, $second-index + 1), null);
+  $font-size: str-slice($token, 1, $first-index - 1);
+  $line-height: if(
+    $second-index,
+    str-slice($token, $first-index + 1, $second-index - 1),
+    str-slice($token, $first-index + 1)
+  );
+  $font-weight: if($second-index, str-slice($token, $second-index + 1), null);
 
-    font-size: #{$font-size}px;
-    line-height: #{($line-height / 100)};
-    @if $font-weight {
-        font-weight: #{$font-weight};
-    }
+  font-size: #{$font-size}px;
+  line-height: #{($line-height / 100)};
+  @if $font-weight {
+    font-weight: #{$font-weight};
+  }
 }
